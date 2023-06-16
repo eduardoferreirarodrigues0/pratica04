@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    <title>Editar Produto</title>
+
+    <h1>Editar Produto</h1>
+    <form action="{{ url_for('editar_produto', index=index) }}" method="POST">
+        <p>Produto: {{ produto['nome'] }}</p>
+        <p>Preço: R$ {{ produto['preco'] }}</p>
+        <p>
+            Quantidade:
+            <input type="number" name="quantidade" value="{{ quantidade }}" min="0">
+        </p>
+        <input type="submit" value="Salvar">
+    </form>
+{% endblock %}
